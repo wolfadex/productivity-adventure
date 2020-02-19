@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Productivity Adventure</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="elm.js"></script>
+    <script>
+      const app = Elm.Main.init({
+        node: document.getElementById("root"),
+        flags: Date.now(),
+      });
+
+      window.addEventListener("keyup", function() {
+        app.ports.tick.send(0);
+      })
+    </script>
+  </body>
+</html>
